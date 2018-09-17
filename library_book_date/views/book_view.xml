@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<odoo>
+  <data>
+    <!-- Inherit Form View to modifiy it -->
+    <record id="library_book_form_view_inherit" model="ir.ui.view">
+       <field name="name">library.book.form.inherit</field>
+    <field name="model">library.book</field>
+        <field name="inherit_id" ref="library.library_book_form_view"/>
+        <field name="arch" type="xml">
+                    <!-- Add your fields or attributes here -->
+                <field name="name" position="after">
+                    <field name="date"/>
+                    <field name="purchase_price"/>
+                    <field name="sale_price"/>
+                    <field name="gain_price"/>
+                </field>
+        </field>
+    </record>
+  </data>
+</odoo>

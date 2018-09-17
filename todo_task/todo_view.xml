@@ -1,0 +1,17 @@
+
+    <odoo>
+        <data>
+            <!-- Action to open To-do Task list -->
+            <record model="ir.actions.act_window" id="first_module.action_window">
+              <field name="name">To-do tasks</field>
+              <field name="res_model">todo.task</field>
+              <field name="view_mode">tree,form</field>
+            </record>
+
+            <!-- Menu item to open To-do Task list -->
+
+            <menuitem name="To-Do Tasks" id="menu_todo_task" parent="mail.mail_feeds"
+                      action="action_todo_task"/>
+        </data>
+    </odoo>
+
