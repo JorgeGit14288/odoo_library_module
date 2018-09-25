@@ -1,6 +1,7 @@
 from odoo import models, fields, api
 
 class LibraryAuthor (models.Model):
+
     _name = "library.author"
 
     name = fields.Char(string="Name")
