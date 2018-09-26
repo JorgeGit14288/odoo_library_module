@@ -1,0 +1,78 @@
+<odoo>
+  <data>
+    <!-- =================================================
+    field name="arch" el atributo mas importante es arch, que contiene la definicion
+    de la vista.  Aqui decimos que es un formulario y que contiene tres campos
+    =================================================== -->
+
+
+   <!-- VISTA TIPO TREE PARA CATEGORIA -->
+   <record model="ir.ui.view" id="view_tree_tienda_categoria">
+     <field name="name">tree tienda</field>
+     <field name="model">tienda.categoria</field>
+     <field name="arch" type="xml">
+       <tree string="LISTA CATEGORIA">
+         <field name="id_categoria"/>
+         <field name="nombre"/>
+         <field name="descripcion"/>
+       </tree>
+     </field>
+   </record>
+
+    <!-- VISTA FORM PARA CATEGORIA -->
+    <record id="view_form_tienda_categoria" model="ir.ui.view">
+        <field name="name">formulario tienda categoria</field>
+        <field name="model">tienda.categoria</field>
+        <field name="arch" type="xml">
+            <form string="Formulario Categoria">
+                <sheet>
+                    <field name="imagen" widget="image"/>
+                    <group>
+                        <field name="id_categoria"/>
+                        <field name="nombre"/>
+                    </group>
+                    <group>
+                        <field name="descripcion"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+      <!--ACTION TREE -->
+      <record id="t_action_view_tree_categoria" model="ir.actions.act_window">
+          <field name="name">VISTA DE LAS CATEGORIAS</field>
+           <field name="type">ir.actions.act_window</field>
+          <field name="res_model">tienda.categoria</field>
+          <field name="view_mode">tree,form</field>
+          <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+              algo
+            </p><p>
+              algo 2
+            </p>
+          </field>
+      </record>
+      <!--ACTION TREE -->
+      <record id="t_action_view_form_categoria" model="ir.actions.act_window">
+          <field name="name">VISTA DE FORM</field>
+           <field name="type">ir.actions.act_window</field>
+          <field name="res_model">tienda.categoria</field>
+          <field name="view_mode">form</field>
+          <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+              algo
+            </p><p>
+              algo 2
+            </p>
+          </field>
+      </record>
+
+
+      <menuitem name="Tienda" id="tienda.menu_root"/>
+      <menuitem name="Categoria Vista TREE" id="tienda.menu_2" parent="tienda.menu_root" action="t_action_view_tree_categoria"
+                sequence="11"/>
+      <menuitem name="Categoria vista FORM" id="tienda.menu_3" parent="tienda.menu_root" action="t_action_view_form_categoria"
+                sequence="12"/>
+  </data>
+</odoo>
