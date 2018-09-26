@@ -1,0 +1,38 @@
+<odoo>
+  <data>
+    <!-- odoo lista por defecto -->
+
+
+    <!-- acción que abre el modelo para cargarla en la vista-->
+
+
+    <act_window id="accion_categoria_window"
+                name="Categoria  productos"
+                res_model="tienda.categoria"
+                view_mode="tree,form"
+    />
+<!--
+    id          :identificador único en la tabla
+    name        :Este es el título mostrado en las vistas abiertas a través de esta acción.
+    res_model   :Es el identificador del modelo de destino.
+    view_mode   :Son los tipos de vista que estarán disponibles. El orden es relevenate y
+                 el primero de la lista será la vista que se abrirá de forma predeterminada.
+    -->
+     <!-- importante
+          ==========
+          Las acciones de una ventana se almacenan en el modelo ir.actions.act_window
+          y pueden ser definidas en archivos XML usando el acceso directo <act_window> que recién usamos.
+          el modelo  ir.actions.act_window se guardan en base datos como:ir_act_window  -->
+
+
+        <!-- Top menú -->
+
+    <menuitem name="tienda - menu padre" id="tienda.menu_root"/>
+
+        <!-- menú categoría  -->
+
+    <menuitem name="categoria sub menu 01 " id="tienda.menu_1" parent="tienda.menu_root" action="accion_categoria_window"/>
+
+
+  </data>
+</odoo>
